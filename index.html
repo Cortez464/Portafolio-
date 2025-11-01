@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osvaldo Cortez - Portafolio Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .contact-item::before {
+            content: '●';
+            color: #667eea;
+            font-size: 1.5em;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::before {
+            content: '▶';
+            color: #764ba2;
+        }
+
+        .objetivo-text {
+            font-size: 1.15em;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .education-item {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+        }
+
+        .education-item h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .education-item .institution {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .education-item .details {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .badge.in-progress {
+            background: #f093fb;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .cert-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 1.1em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/Z05D04f/image.jpg" class="profile-photo" alt="Osvaldo Vladimir Cortez Aguirre">
+            <h1>Osvaldo Vladimir Cortez Aguirre</h1>
+            <p class="subtitle">Técnico Universitario en Ciberseguridad</p>
+            <div class="contact-info">
+                <div class="contact-item">ciberseguridad.osvaldo@gmail.com</div>
+                <div class="contact-item">+503 6061-3425</div>
+                <div class="contact-item">San Salvador, El Salvador</div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Objetivo Profesional</h2>
+            <p class="objetivo-text">
+                Técnico universitario en formación especializado en Ciberseguridad, con sólidos conocimientos en informática y ofimática. Busco desarrollar mi carrera profesional en el ámbito de la seguridad informática, aplicando mis conocimientos técnicos para proteger sistemas, datos y redes contra amenazas cibernéticas. Comprometido con el aprendizaje continuo y la excelencia profesional en el campo de la ciberseguridad.
+            </p>
+        </section>
+
+        <section>
+            <h2>Formación Académica</h2>
+            <div class="cert-grid">
+                <div class="education-item">
+                    <h3>Técnico Universitario en Ciberseguridad</h3>
+                    <p class="institution">ESIT El Salvador</p>
+                    <p class="details">Tercer Ciclo - Actualmente cursando</p>
+                    <span class="badge in-progress">EN CURSO</span>
+                </div>
+
+                <div class="education-item">
+                    <h3>Técnico en Informática (Ofimática)</h3>
+                    <p class="institution">Capacítate para el Empleo</p>
+                    <p class="details">91 horas | Calificación: 8.58/10 | Completado: Noviembre 2024</p>
+                    <span class="badge">COMPLETADO</span>
+                </div>
+
+                <div class="education-item">
+                    <h3>Habilidades de Presentación</h3>
+                    <p class="institution">Capacítate para el Empleo</p>
+                    <p class="details">10 horas | Calificación: 8.0/10 | Completado: Noviembre 2024</p>
+                    <span class="badge">COMPLETADO</span>
+                </div>
+
+                <div class="education-item">
+                    <h3>Diploma de Computación Administrativa</h3>
+                    <p class="institution">Club Digital de Programadores Ahuachapanecos (CDPAC)</p>
+                    <p class="details">Duración: 2 años | Completado: Diciembre 2014</p>
+                    <span class="badge">COMPLETADO</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🖥️ Sistemas Operativos</h3>
+                    <p>Administración y gestión de diferentes entornos operativos</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📊 Microsoft Office</h3>
+                    <p>Dominio de herramientas de productividad y ofimática</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🐍 Python</h3>
+                    <p>Programación y desarrollo de scripts</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🔒 Ciberseguridad</h3>
+                    <p>Conocimientos en seguridad informática y protección de sistemas</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Idiomas</h2>
+            <div class="education-item">
+                <h3>Español</h3>
+                <p class="details">Nativo - Dominio completo</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Osvaldo Vladimir Cortez Aguirre - Portafolio Profesional</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Actualizado: Noviembre 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
